@@ -1,0 +1,172 @@
+/* header currently providing gradient over entire viewport, with a z index below content so that content can be interacted with. causing headline to become covered on scroll-up.
+
+After header/footer gradient fixed, work on slide-out animation to make more robotic (slide/expand) */
+
+body {
+  width:100%;
+  background-color:lightgray;
+  height:120vh;
+  margin:0;
+  opacity:1;
+}
+
+.header {
+  height:20vh;
+  text-align:center;
+  background: -webkit-linear-gradient(#4b367c, rgba(0,0,0,1));
+  background: -o-linear-gradient(#4b367cv, rgba(0,0,0,1));
+  background: -moz-linear-gradient(#4b367c, rgba(0,0,0,1));
+  background: linear-gradient(rgba(84,61,138,1), rgba(255,255,255,0));
+  position:fixed;
+  width:100vw;
+  z-index:2;
+}
+
+.headline {
+  margin:0 auto;
+  padding-top:4vh;
+  font-family:'pacifico';
+  font-size:10vh;
+  color:#0e9dd9;
+  text-shadow: 2px 2px red;
+  -webkit-font-smoothing: antialiased;
+  -mox-osx-font-smoothing: grayscale;
+}
+
+.background {
+  height:auto;
+  background:url('https://img.clipartfest.com/2253e6156456442af88830b072871b31_amazing-video-game-facts-video-game-controller-clipart-black-and-white_1249-1024.png');
+  //background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-color:lightgray;
+  margin-top:-20px;
+  padding-top:0;
+}
+
+
+.buffer {
+  height:20vh;
+}
+
+.row {
+  margin:30px;
+  padding:0;
+}
+
+.content {
+  height:auto;
+  padding-bottom:5vh;
+}
+
+.user {
+  display:block;
+  margin:0;
+  padding:0;
+}
+
+.user img {
+  width:33vw;
+  height: auto;
+  position:relative;
+    left:33.33%;
+  z-index:1;
+  -ms-transform: translate(0vw);
+  -webkit-transform: translate(0vw);
+  transform: translate(0vw);
+  transition:all .5s ease-in-out;
+  border-radius: 4%;
+
+}
+
+.tray {
+  background-color:#0e9dd9;
+  text-align:center;
+  color:white;
+  position:absolute;
+    left:33.33%;
+    width:33%;
+  opacity:0;
+  border-radius:4%;
+
+  -ms-transform: translate(0vw);
+  -webkit-transform: translate(0vw);
+  transform: translate(0vw);
+  transition:all .3s ease-in-out;
+
+}
+
+.tray:hover {
+  background-color:#4b367c;
+  opacity:.5;
+}
+
+.tray H1 {
+  font-size: 3vw;
+  text-shadow: 2px 2px 2px black;
+  margin-top: 18%;
+  margin-bottom:0;
+  font-family:'Orbitron';
+  color:red;
+}
+
+.tray H3 {
+  font-size:1.3vw;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:0;
+  text-shadow: 1px 1px 1px black;
+  font-family:'Archivo';
+  color:red;
+  font-weight:bold;
+  opacity:1;
+}
+
+.tray H5 {
+  position:relative;
+  bottom:-7%;
+  text-shadow: 1px 1px 1px black;
+  font-size:1.5vw;
+
+}
+
+a {
+  text-decoration:none !important;
+  color:white !important;
+}
+
+.footer {
+  height:20vh;
+  background: -webkit-linear-gradient(rgba(0,0,0,0),#4b367c);
+  background: -o-linear-gradient(rgba(0,0,0,0),#4b367c);
+  background: -moz-linear-gradient(rgba(0,0,0,0),#4b367c);
+  background: linear-gradient(rgba(255,255,255,0), rgba(84,61,138,1) );
+  position:fixed;
+  width:100vw;
+  z-index:4;
+}
+
+.user:hover img  {
+  -ms-transform: translate(-17vw);
+  -webkit-transform: translate(-17vw);
+  transform: translate(-17vw);
+  transition:all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.user:hover .tray  {
+  opacity:.9;
+  -ms-transform: translate(17vw);
+  -webkit-transform: translate(17vw);
+  transform: translate(17vw);
+  transition:all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#mask {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:white;
+    z-index:99;
+}
