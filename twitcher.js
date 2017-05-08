@@ -2,6 +2,7 @@ $("document").ready(function() {
 
 
   var getUserData = function(userName, userNumber) {
+    var imgHeight = 0;
     var key = "n9w785u28g4g9thqa7qm7q0d9ee8qz";
     $.ajax({
       url:'https://api.twitch.tv/channels/' + userName +'?oauth_token=' + key + '&callback=?',
@@ -9,16 +10,7 @@ $("document").ready(function() {
       type: "GET",
       success: function(data) {
         console.log(data);
-        /*if (data.video_banner != null) {
-          $(".content").append(
-            '<div class = "row"><span class = "user"><img id = "img' + userNumber + '" src="' +
-              data.video_banner +
-              '"><a href = "https://www.twitch.tv/' +
-              data.name +
-              '" target="_blank"><span class = "tray" id = "user' +
-              userNumber +
-              '"><H1>' + data.display_name + '</H1><H3>' + data.status + '</H3></span></a></span></div>'
-          );*/
+        
 
           if (data.video_banner != null) {
             $(".content").append(
@@ -30,8 +22,8 @@ $("document").ready(function() {
                 userNumber +
                 '"><H1>' + data.display_name + '</H1><H3>' + data.status + '</H3></span></a></span></div>'
             );
-
-            $(".tray").css("height", $("img").height());
+            imgHeight = $("img").height()
+            $(".target").css("height", imgHeight);
 
           if (data.game != null)
             $("#user" + userNumber).append(
