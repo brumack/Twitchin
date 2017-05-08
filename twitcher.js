@@ -9,7 +9,7 @@ $("document").ready(function() {
       type: "GET",
       success: function(data) {
         console.log(data);
-        if (data.video_banner != null) {
+        /*if (data.video_banner != null) {
           $(".content").append(
             '<div class = "row"><span class = "user"><img id = "img' + userNumber + '" src="' +
               data.video_banner +
@@ -18,18 +18,27 @@ $("document").ready(function() {
               '" target="_blank"><span class = "tray" id = "user' +
               userNumber +
               '"><H1>' + data.display_name + '</H1><H3>' + data.status + '</H3></span></a></span></div>'
-          );
-
-          /*$("#user" + userNumber).append(
-            "<H1>" + data.display_name + "</H1><H3>" + data.status + "</H3>"
           );*/
+
+          if (data.video_banner != null) {
+            $(".content").append(
+              '<div class = "row"><span class = "user"><img id = "img' + userNumber + '" src="' +
+                data.video_banner +
+                '"><a href = "https://www.twitch.tv/' +
+                data.name +
+                '" target="_blank"><span class = "tray" id = "user' +
+                userNumber +
+                '"><H1>' + data.display_name + '</H1><H3>' + data.status + '</H3></span></a></span></div>'
+            );
+
+            $(".tray").css("height", $("img").height());
 
           if (data.game != null)
             $("#user" + userNumber).append(
               "<H5>Playing: " + data.game + "</H5>"
             );
 
-          $(".tray").css("height", $("img").height());
+
 
           $.ajax({
             url:'https://api.twitch.tv/kraken/streams/' + userName + '?oauth_token=' + key + '&callback=?',

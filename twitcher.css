@@ -65,22 +65,10 @@ body {
   padding:0;
 }
 
-.user img {
-  width:33vw;
-  height: auto;
-  position:relative;
-    left:33.33%;
-  z-index:1;
-  -ms-transform: translate(0vw);
-  -webkit-transform: translate(0vw);
-  transform: translate(0vw);
-  transition:all .5s ease-in-out;
-  border-radius: 4%;
 
-}
 
 .tray {
-  background-color:#0e9dd9;
+  background-color:#0e9dd9 !important;
   text-align:center;
   color:white;
   position:absolute;
@@ -96,9 +84,24 @@ body {
 
 }
 
+.user img {
+  width:33vw;
+  height: auto;
+  position:relative;
+    left:33.33%;
+  z-index:1;
+  -ms-transform: translate(0vw);
+  -webkit-transform: translate(0vw);
+  transform: translate(0vw);
+  transition:all .5s ease-in-out;
+  border-radius: 4%;
+}
+
+
+
 .tray:hover {
-  background-color:#4b367c;
-  opacity:.5;
+  background-color:#4b367c !important;
+  opacity:.5 !important;
 }
 
 .tray H1 {
