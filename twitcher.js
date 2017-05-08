@@ -17,12 +17,13 @@ $("document").ready(function() {
               data.name +
               '" target="_blank"><span class = "tray" id = "user' +
               userNumber +
-              '"><H1>' + data.display_name + '</H1></span></a></span></div>'
+              '"><H1>' + data.display_name + '</H1><H3>' + data.status + '</H3></span></a></span></div>'
           );
 
           /*$("#user" + userNumber).append(
             "<H1>" + data.display_name + "</H1><H3>" + data.status + "</H3>"
           );*/
+
           if (data.game != null)
             $("#user" + userNumber).append(
               "<H5>Playing: " + data.game + "</H5>"
