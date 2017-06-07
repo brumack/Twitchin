@@ -10,7 +10,7 @@ $("document").ready(function() {
       type: "GET",
       success: function(data) {
         console.log(data);
-        
+
 
           if (data.video_banner != null) {
             $(".content").append(
@@ -23,7 +23,7 @@ $("document").ready(function() {
                 '"><H1>' + data.display_name + '</H1><H3>' + data.status + '</H3></span></a></span></div>'
             );
             imgHeight = $("img").height()
-            $(".target").css("height", imgHeight);
+            $(".tray").css("height", imgHeight);
 
           if (data.game != null)
             $("#user" + userNumber).append(

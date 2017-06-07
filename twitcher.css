@@ -110,7 +110,7 @@ body {
   margin-top: 18%;
   margin-bottom:0;
   font-family:'Orbitron';
-  color:red;
+  color:white;
 }
 
 .tray H3 {
@@ -120,7 +120,7 @@ body {
   margin-top:0;
   text-shadow: 1px 1px 1px black;
   font-family:'Archivo';
-  color:red;
+  color:white;
   font-weight:bold;
   opacity:1;
 }
@@ -147,6 +147,13 @@ a {
   position:fixed;
   width:100vw;
   z-index:4;
+}
+
+.user H5 {
+  position:absolute;
+  width:50%;
+  left:25%;
+
 }
 
 .user:hover img  {
